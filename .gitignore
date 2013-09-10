@@ -1,0 +1,32 @@
+/target
+/bin
+/RemoteSystemsTempFiles
+
+# OS generated files #
+.DS_Store
+Icon?
+Thumbs.db
+
+# Compiled source #
+*.class
+
+# Eclipse generated files #
+.classpath
+
+# NetBeans generated files #
+.nbactions.xml
+.navData
+.catalog.xml
+nb-configuration.xml
+
+# .NavData #
+convert-faces-config.NavData
+faces-config.NavData
+navigation-faces-config.NavData
+validator-faces-config.NavData
+
+# Package Files #
+*.jar
+*.war
+*.ear
+.metadata/

@@ -1,8 +1,13 @@
 package br.com.mrg.dbtracemodel.controller;
 
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
-@ManagedBean
+@Named
+@RequestScoped
 public class ModuloController extends AbstractController {
+    
+    private static final long serialVersionUID = 1L;
+    
     
 }

@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <aside id="sidebar" class="column">
+        <h3>Tracker</h3>
+        <ul class="toggle">
+            <li class="icn_new_article"><a href="#">Nova Tabela</a></li>
+            <li class="icn_edit_article"><a href="#">Novo Módulo</a></li>
+            <li class="icn_categories"><a href="#">Novo Repositório</a></li>
+            <li class="icn_tags"><a href="#">Relacionamentos</a></li>
+        </ul>
+        <h3>Usuários</h3>
+        <ul class="toggle">
+            <li class="icn_add_user"><a href="#">Novo Usuário</a></li>
+            <li class="icn_view_users"><a href="#">Ver Usuários</a></li>
+            <li class="icn_profile"><a href="#">Meu Perfil</a></li>
+        </ul>
+        <h3>Administração</h3>
+        <ul class="toggle">
+            <li class="icn_settings"><a href="#">Opções</a></li>
+            <li class="icn_security"><a href="#">Segurança</a></li>
+            <li class="icn_jump_back"><a href="#">Sair</a></li>
+        </ul>
+
+        <footer>
+            <hr />
+            <article class="module width_full">
+                <header><h3>Status</h3></header>
+                <div class="module_content">
+                    <article class="stats_overview">
+                        <div class="overview_previous">
+                            <p class="overview_day">Repositórios</p>
+                            <p class="overview_count">12</p>
+                        </div>
+                    </article>
+                    <article class="stats_overview">
+                        <div class="overview_today">
+                            <p class="overview_day">Tabelas</p>
+                            <p class="overview_count">86</p>
+                        </div>
+                    </article>
+                    <div class="clear"></div>
+                </div>
+            </article>
+        </footer>
+    </aside>
+    
+</ui:composition>

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.hibernate.Criteria;
 
 import org.hibernate.Session;
 
@@ -24,18 +25,18 @@ public class DefaultRepository<T> implements IDefaultRepository<T> {
 
     @Override
     public T findById(Long id) {
-        return this.entityManager.find(type, id);
+        return this.entityManager.find(this.type, id);
     }
 
     @Override
     public T findById(String id) {
-        return this.entityManager.find(type, id);
+        return this.entityManager.find(this.type, id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<T> findAll() {
-        return createSession().createCriteria(type).list();
+        return createSession().createCriteria(this.type).list();
     }
 
     public void delete(Object object) {
@@ -54,6 +55,10 @@ public class DefaultRepository<T> implements IDefaultRepository<T> {
 
     protected Session createSession() {
         return (Session) this.entityManager.getDelegate();
+    }
+    
+    protected Criteria createCriteria() {
+        return createSession().createCriteria(this.type);
     }
 
     protected EntityManager getEntityManager() {

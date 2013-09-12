@@ -2,6 +2,7 @@ package br.com.mrg.dbtracemodel.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,15 +20,33 @@ public class Usuario extends AbstractEntity {
     private String login;
     
     @Column(name = "senha")
-    @NotNull(message = "Senha obrigatória")
+    @NotNull
     private String senha;
-
+    
+    @Transient
+    private String novaSenha;
+    
+    @Transient
+    private String confirmaSenha;
+    
+    public boolean isConfirmaSenha() {
+        return this.senha.equals(this.confirmaSenha);
+    }
+    
+    public boolean isNovaSenhaValida() {
+        return !senha.equals(confirmaSenha) && confirmaSenha.equals(novaSenha);
+    }
+    
     public String getLogin() {
         return login;
     }
 
     public void setLogin(String login) {
         this.login = login;
+    }
+    
+    public String getNome() {
+        return nome;
     }
 
     public String getSenha() {
@@ -37,13 +56,33 @@ public class Usuario extends AbstractEntity {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public String getNome() {
-        return nome;
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getConfirmaSenha() {
+        return confirmaSenha;
+    }
+
+    
+    
+    public void setConfirmaSenha(String confirmaSenha) {
+        this.confirmaSenha = confirmaSenha;
+    }
+
+    public String getNovaSenha() {
+        return novaSenha;
+    }
+    
+    
+
+    public void setNovaSenha(String novaSenha) {
+        this.novaSenha = novaSenha;
+    }
+    
+    
+    
+    
     
 }

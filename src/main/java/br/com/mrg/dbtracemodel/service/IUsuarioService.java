@@ -1,10 +1,15 @@
 package br.com.mrg.dbtracemodel.service;
 
 import br.com.mrg.dbtracemodel.entity.Usuario;
-import br.com.mrg.dbtracemodel.exception.NomeIndisponivelException;
+import org.dbtrace.exceptions.NomeIndisponivelException;
+import org.dbtrace.exceptions.SenhaNaoConfereException;
 
 public interface IUsuarioService {
+        
+    void criar(Usuario usuario) throws NomeIndisponivelException,SenhaNaoConfereException ;
     
-    public void criar(Usuario usuario) throws NomeIndisponivelException;
+    void atualizar(Usuario usuario, String confirmarSenha) throws SenhaNaoConfereException ;
+    
+    void apagar(Usuario usuario);
     
 }

@@ -17,7 +17,7 @@ public class AbstractEntity implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
     
     @Version
     @Column(name = "version")
@@ -26,9 +26,9 @@ public class AbstractEntity implements Serializable {
     
     @Column(name = "data_criacao")
     @NotNull
-    private DateTime dataCriacao = DateTime.now();
+    protected DateTime dataCriacao = DateTime.now();
     
-    private boolean ativo = true;
+    protected boolean ativo = true;
 
     public boolean getAtivo() {
         return ativo;

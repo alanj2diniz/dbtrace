@@ -6,14 +6,21 @@
                     http://www.springframework.org/schema/security 
                     http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <http auto-config='true'>
-        <intercept-url pattern="/**" access="ROLE_USER" />
+    <http auto-config="true">
+        <intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        
+        <form-login login-page="/login.html"
+                    default-target-url="/index.xhtml" 
+                    always-use-default-target="true"
+                    authentication-failure-url="/login.html" />
+        
+        <intercept-url pattern="/*.xhtml" access="ROLE_USER" />
     </http>
 
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="alan" password="123" authorities="ROLE_USER" />
+                <user name="alan" password="alan" authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

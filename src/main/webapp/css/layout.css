@@ -363,7 +363,7 @@ margin-top: 20%;
 
 section#main {
 width: 77%;
-min-height: 500px;
+height: 100%;
 background: url(../images/sidebar_shadow.png) repeat-y left top;
 float: left;
 margin-top: -2px;
